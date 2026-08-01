@@ -79,4 +79,74 @@
 #include <vector>
 #include <string>
 using namespace std;
+def add_task():
+    task = input("Enter task: ")
+    tasks.append(task)
+    print('Task added: "' + task + '"')
+
+
+
+def view_tasks():
+    if len(tasks) == 0:
+        print("Your to-do list is empty.")
+    else:
+        print("\nYour Tasks:")
+        for i in range(len(tasks)):
+            print(str(i + 1) + ". " + tasks[i])
+
+
+
+def delete_task():
+    if len(tasks) == 0:
+        print("There are no tasks to delete.")
+        return
+
+    print("\nYour Tasks:")
+    for i in range(len(tasks)):
+        print(str(i + 1) + ". " + tasks[i])
+
+    choice = input("Enter task number to delete: ")
+
+    if choice.isdigit():
+        choice = int(choice)
+
+        if choice >= 1 and choice <= len(tasks):
+            removed_task = tasks.pop(choice - 1)
+            print('Task "' + removed_task + '" has been removed.')
+        else:
+            print("Error: Invalid task number.")
+    else:
+        print("Error: Please enter a valid number.")
+
+
+
+def show_menu():
+    print("\n============================")
+    print("      TO-DO LIST MENU")
+    print("============================")
+    print("1. Add task")
+    print("2. View tasks")
+    print("3. Delete task")
+    print("4. Quit")
+
+while True:
+    show_menu()
+
+    choice = input("Enter your choice (1-4): ")
+
+    if choice == "1":
+        add_task()
+
+    elif choice == "2":
+        view_tasks()
+
+    elif choice == "3":
+        delete_task()
+
+    elif choice == "4":
+        print("Goodbye!")
+        break
+
+    else:
+        print("Error: Invalid choice. Please enter a number from 1 to 4.")
 
