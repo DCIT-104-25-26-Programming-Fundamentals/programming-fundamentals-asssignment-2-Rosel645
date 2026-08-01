@@ -73,3 +73,94 @@
 #include <cmath>
 using namespace std;
 
+def addition(num1, num2):
+    return num1 + num2
+
+
+def subtraction(num1, num2):
+    return num1 - num2
+
+
+def multiplication(num1, num2):
+    return num1 * num2
+
+
+def division(num1, num2):
+    if num2 == 0:
+        print("Error: Cannot divide by zero.")
+    else:
+        print("Result:", num1, "/", num2, "=", round(num1 / num2, 2))
+
+
+def modulus(num1, num2):
+    if num2 == 0:
+        print("Error: Cannot divide by zero.")
+    else:
+        print("Result:", num1, "%", num2, "=", num1 % num2)
+
+
+def exponentiation(num1, num2):
+    return num1 ** num2
+
+
+
+def menu():
+    print("\n============================")
+    print("     SIMPLE CALCULATOR")
+    print("============================")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulus")
+    print("6. Exponentiation")
+    print("7. Quit")
+
+
+
+
+    menu()
+
+    choice = input("Select an operation (1-7): ")
+
+    if choice == "7":
+        print("Goodbye!")
+        break
+
+    elif choice == "1":
+        first = float(input("Enter first number: "))
+        second = float(input("Enter second number: "))
+        answer = addition(first, second)
+        print("Result:", first, "+", second, "=", answer)
+
+    elif choice == "2":
+        first = float(input("Enter first number: "))
+        second = float(input("Enter second number: "))
+        answer = subtraction(first, second)
+        print("Result:", first, "-", second, "=", answer)
+
+    elif choice == "3":
+        first = float(input("Enter first number: "))
+        second = float(input("Enter second number: "))
+        answer = multiplication(first, second)
+        print("Result:", first, "*", second, "=", answer)
+
+    elif choice == "4":
+        first = float(input("Enter first number: "))
+        second = float(input("Enter second number: "))
+        division(first, second)
+
+    elif choice == "5":
+        first = float(input("Enter first number: "))
+        second = float(input("Enter second number: "))
+        modulus(first, second)
+
+    elif choice == "6":
+        first = float(input("Enter first number: "))
+        second = float(input("Enter second number: "))
+        answer = exponentiation(first, second)
+        print("Result:", first, "**", second, "=", answer)
+
+    else:
+        print("Error: Invalid choice. Please enter a number from 1 to 7.")
+
