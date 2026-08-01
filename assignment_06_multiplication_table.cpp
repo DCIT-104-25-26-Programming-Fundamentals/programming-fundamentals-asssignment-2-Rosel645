@@ -56,4 +56,80 @@
 
 #include <iostream>
 using namespace std;
+#include <iostream>
+
+using namespace std;
+
+
+// Function for Part A - Single Multiplication Table
+void single_table()
+{
+    int number;
+
+    cout << "PART A - Single Multiplication Table" << endl;
+
+    cout << "Enter a number: ";
+    cin >> number;
+
+    if (number <= 0)
+    {
+        cout << "Error: Please enter a positive integer." << endl;
+        return;
+    }
+
+    cout << "\nMultiplication Table for " << number << endl;
+    cout << "---------------------------" << endl;
+
+    for (int i = 1; i <= 12; i++)
+    {
+        cout << number << " x " << i << " = " << number * i << endl;
+    }
+}
+
+
+// Function for Part B - Tables from 1 to N
+void tables_to_n()
+{
+    int n;
+
+    cout << "\nPART B - Multiplication Tables from 1 to N" << endl;
+
+    cout << "Enter a positive integer: ";
+    cin >> n;
+
+    if (n <= 0)
+    {
+        cout << "Error: Please enter a positive integer greater than zero." << endl;
+        return;
+    }
+
+    for (int number = 1; number <= n; number++)
+    {
+        cout << "\nMultiplication Table for " << number << endl;
+        cout << "---------------------------" << endl;
+
+        for (int i = 1; i <= 12; i++)
+        {
+            cout << number << " x " << i << " = " << number * i << endl;
+        }
+
+        cout << "---------------------------" << endl;
+    }
+}
+
+
+// Main Program
+int main()
+{
+    cout << "WELCOME TO THE MULTIPLICATION TABLE GENERATOR" << endl;
+    cout << "=============================================" << endl;
+
+    single_table();
+
+    tables_to_n();
+
+    cout << "\nThank you for using the Multiplication Table Generator!" << endl;
+
+    return 0;
+}
 
