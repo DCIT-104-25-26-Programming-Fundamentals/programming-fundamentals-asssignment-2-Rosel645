@@ -47,7 +47,88 @@
 // =============================================================================
 // YOUR CODE BELOW — remove the // symbols from the scaffold and fill it in
 // =============================================================================
+#include <iostream>
 
+using namespace std;
+
+// Function to print Fibonacci sequence
+void print_fibonacci_terms()
+{
+    int n;
+
+    cout << "How many terms? ";
+    cin >> n;
+
+    if (n <= 0)
+    {
+        cout << "Error: N must be a positive integer." << endl;
+        return;
+    }
+
+    int a = 0;
+    int b = 1;
+
+    cout << "Fibonacci sequence: ";
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << a << " ";
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+
+    cout << endl;
+}
+
+// Function to check if a number is a Fibonacci number
+void check_fibonacci_number()
+{
+    int num;
+
+    cout << "Enter a number to check: ";
+    cin >> num;
+
+    if (num < 0)
+    {
+        cout << num << " is NOT a Fibonacci number." << endl;
+        return;
+    }
+
+    int a = 0;
+    int b = 1;
+
+    while (a < num)
+    {
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+
+    if (a == num)
+    {
+        cout << num << " is a Fibonacci number." << endl;
+    }
+    else
+    {
+        cout << num << " is NOT a Fibonacci number." << endl;
+    }
+}
+
+int main()
+{
+    cout << "==================================" << endl;
+    cout << "     FIBONACCI PROGRAM" << endl;
+    cout << "==================================" << endl;
+
+    print_fibonacci_terms();
+    cout << endl;
+    check_fibonacci_number();
+
+    cout << "\nProgram completed successfully." << endl;
+
+    return 0;
+}
 #include <iostream>
 using namespace std;
 
